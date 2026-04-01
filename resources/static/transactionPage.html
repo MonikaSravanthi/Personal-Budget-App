@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transactions</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+  </head>
+  <body>
+    <div class="main-page">
+      <div class="nav-bar">
+        <h2 class="nav-bar__logo">Finyfi</h2>
+        <div class="nav-bar__nar-links">
+          <a href="#">Dashbord</a>
+          <a href="#">Transactions</a>
+          <a href="#">Analytics</a>
+          <a href="#">Profile</a>
+        </div>
+      </div>
+
+      <!-- <div class="all-transactions">
+        <h7 class="all-transactions__title">All transactions</h7>
+        <h7 class="all-transactions__sort">sort by</h7>
+        <button class="all-transactions__add-transaction">
+          add new transaction
+        </button> -->
+        <div class="transaction-page">
+            <div class="sample">
+            <div class="left-col">
+        <div class="summary">
+          <div class="income-container">
+            <div class="income-container__editIcon-title">
+            <h3 class="income-container__title">Income</h3>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="icon">
+                <path d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z" />
+                <path d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z" />
+              </svg>
+              </div>
+            <div class="income-container__price-input">
+            <h2 class="income-container__price">$64,000</h2>
+<!--            <input id="input" type="text" style="display:none;">-->
+            </div>
+          </div>
+
+          <div class="expense-container">
+            <h3 class="expense-container__title">expense</h3>
+            <h2 class="expense-container__price">$400</h2>
+          </div>
+          <div class="balance-container">
+            <h3 class="balance-container__title">Balance</h3>
+            <h2 class="balance-container__price">$4,000</h2>
+          </div>
+        </div>
+                <div class="flex-layout">
+                <canvas id="myChart"></canvas>
+                <canvas id="myPieChart"></canvas>
+                    </div>
+            </div>
+
+
+                <div class="category-limit__container">
+                    <div class="category-limit__navbar">
+                        <div class="category-limit__title">
+                            <p style="border: 1px solid grey; border-radius:20px; padding:5px; font-size: small;font-weight: bold" >Spending Overview</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="cicon">
+                                <path fill-rule="evenodd" d="M2 10a8 8 0 1 1 16 0 8 8 0 0 1-16 0Zm8 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2Zm-3-1a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm7 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z" clip-rule="evenodd" />
+                            </svg>
+
+                        </div>
+
+                    </div>
+
+                    <div class="category-limit__all-categories">
+                        <div class="category-limit__category">
+
+                            <!--                     <div class="category-limit__category-name">-->
+                            <!--                     <p class="name">Groceries</p>-->
+                            <!--                     </div>-->
+
+                            <!--                      <div class="category-limit__progress-bar">-->
+                            <!--                             <div class="category-limit__progress-bar-groceries"><span class="groceries">86%</span></div>-->
+                            <!--                          <p class="category-limit__description">$200 of $400 is spent</p>-->
+
+                            <!--                      </div>-->
+                        </div>
+                    </div>
+                </div>
+                </div>
+            <div class="transaction-container">
+                <div class="transaction-container__navbar">
+                    <div class="transaction-container__header">All Transactions</div>
+
+
+                    <div class="transaction-container__menu-icons">
+                        <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                                class="add-button"
+                        >
+                            <path
+                                    fill-rule="evenodd"
+                                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
+                                    clip-rule="evenodd"
+                            />
+                        </svg>
+                        <div class="sort-wrapper">
+                            <button class="sort-btn">sort by</button>
+                            <div class="sort-dropdown-menu hidden">
+                                <a id="date-btn" href="#">Date</a>
+                                <a id="amt-btn" href="#">Amount</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="transactions-list">
+                    <div class="transactions-list__labels">
+                        <div class="transactions-list__header">Receiver</div>
+                        <div class="transactions-list__header">Category</div>
+                        <div class="transactions-list__header">Date</div>
+                        <div class="transactions-list__header">Amount</div>
+                        <div class="transactions-list__header">Notes</div>
+                        <div class="transactions-list__header"></div>
+                    </div>
+
+                    <div class="transaction-list__all-rows">
+                        <!--                  <div class="row" data-t-id = 23>-->
+                        <!--                      <div class="transaction-list__data">1eufjsdhfdfsdhfsd</div>-->
+                        <!--                      <div class="transaction-list__data">2sdk</div>-->
+                        <!--                      <div class="transaction-list__data">ddffwef</div>-->
+                        <!--                      <div class="transaction-list__data">efwefwe</div>-->
+                        <!--                      <div class="transaction-list__data">eefwefwefwefwefwef5</div>-->
+                        <!--                      <div class="transactions-list__row-icons">-->
+
+                        <!--                      </div>-->
+
+
+                    </div>
+                </div>
+
+
+
+                <!--            <div class="transactions-list__row" data-t-id = "1">-->
+                <!--              <div class="transaction-name">Stop and shop</div>-->
+                <!--              <div>Groceries</div>-->
+                <!--              <div class="transactions-list__row-date">Oct 22</div>-->
+                <!--              <div class="transactions-list__row-amount"><b>$45</b></div>-->
+                <!--              <div>Weekly shopping</div>-->
+                <!--              <div class="edit-del-Icons">-->
+                <!--                <div class="editIcon">-->
+                <!--                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">-->
+                <!--                  <path d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z" />-->
+                <!--                  <path d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z" />-->
+                <!--                </svg></div>-->
+                <!--                <div class="deleteIcon">-->
+
+                <!--                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">-->
+                <!--                  <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 0 1 3.878.512.75.75 0 1 1-.256 1.478l-.209-.035-1.005 13.07a3 3 0 0 1-2.991 2.77H8.084a3 3 0 0 1-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 0 1-.256-1.478A48.567 48.567 0 0 1 7.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 0 1 3.369 0c1.603.051 2.815 1.387 2.815 2.951Zm-6.136-1.452a51.196 51.196 0 0 1 3.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 0 0-6 0v-.113c0-.794.609-1.428 1.364-1.452Zm-.355 5.945a.75.75 0 1 0-1.5.058l.347 9a.75.75 0 1 0 1.499-.058l-.346-9Zm5.48.058a.75.75 0 1 0-1.498-.058l-.347 9a.75.75 0 0 0 1.5.058l.345-9Z" clip-rule="evenodd" />-->
+                <!--                </svg>-->
+                <!--                </div>-->
+                <!--              </div>-->
+
+                <!--            </div>-->
+
+            </div>
+
+
+
+        </div>
+        <div class="Error-Message hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+            </svg>
+
+            <div class="details">
+                <div class="message"></div>
+
+            </div>
+
+        </div>
+
+
+      </div>
+
+
+
+     <div class="overlay hidden"></div>
+
+
+
+
+      <div class="transaction-form hidden">
+        <form
+          id="form">
+<!--          method="post"-->
+<!--          action="/saveTransaction"-->
+
+          <div class="close-button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="close-button-icon"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </div>
+
+          <div class="receiver-and-category">
+            <label for="receiver" class="label">Receiver</label>
+
+            <div class="input-box">
+              <input
+                id="receiver"
+                type="text"
+                name="receiver"
+                placeholder="receiver"
+              />
+            </div>
+
+            <label for="categories" class="label">Category</label>
+            <div class="input-box">
+              <select id="categories" name="category">
+
+                <option value="2">Groceries</option>
+                <option value="3">Rent</option>
+                <option value="4">Restaurant</option>
+                <option value="5">Travel</option>
+                <option value="6">Entertainment</option>
+                <option value="7">Internet</option>
+                <option value="8">Taxi</option>
+                <option value="10">Shopping</option>
+
+
+              </select>
+            </div>
+          </div>
+          <div class="date-and-amt">
+            <label for="date" class="label">Date</label>
+            <div class="input-box">
+              <input id="date" type="date" name="date" />
+            </div>
+
+            <label for="amount" class="label">Amount</label>
+            <div class="input-box">
+              <input id="amount" type="number" name="amount" />
+            </div>
+          </div>
+          <label for="notes" class="label">Notes</label>
+          <div class="input-box">
+            <input id="notes" type="text" name="taskDescription" />
+          </div>
+
+          <input id="post-transaction" type="submit" value="save" />
+
+        </form>
+      </div>
+
+          <form  class="cLimit hidden" id="categoryLimit">
+              <div>
+          <label for="groceries">Groceries</label>
+          <input type="number" name="Groceries" id="groceries">
+              </div>
+           <div>
+          <label for="rent">Rent</label>
+          <input type="number" name="Rent" id="rent">
+           </div>
+              <div>
+              <label for="restaurant">Restaurant</label>
+          <input type="number" name="Restaurant" id="restaurant">
+              </div>
+              <div>
+          <label for="travel">Travel</label>
+          <input type="number" name="Travel" id="travel">
+              </div>
+              <div>
+          <label for="entertainment">Entertainment</label>
+          <input type="number" name="Entertainment" id="entertainment">
+              </div>
+              <div>
+          <label for="internet">Internet</label>
+          <input type="number" name="Internet" id="internet">
+              </div>
+              <div>
+          <label for="taxi">Taxi</label>
+          <input type="number" name="Taxi" id="taxi">
+              </div>
+              <div>
+          <label for="shopping">Shopping</label>
+          <input type="number" name="Shopping" id="shopping">
+              </div>
+              <div>
+<button id="submit-btn" type="submit" value="save">save</button>
+              </div>
+
+          </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+    <script src="script.js"></script>
+
+    </div>
+  </body>
+</html>

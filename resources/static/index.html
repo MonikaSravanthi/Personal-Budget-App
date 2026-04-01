@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login-Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="login-container">
+      <form class="form" method="POST"  action="/login">
+        <h1>Welcome Back</h1>
+        <p>Enter your email and password to access your account</p>
+        <label for="username">Username</label>
+        <div class="input-box">
+          <input
+            id="username"
+            type="text"
+            name="username"
+            placeholder="username"
+          />
+        </div>
+        <br />
+
+        <label for="password">Password</label>
+        <div class="input-box">
+          <input
+            id="password"
+            type="password"
+            name="password"
+            placeholder="password"
+          />
+        </div>
+        <br />
+        <div class="remeber-forgot">
+          <label> <input type="checkbox" />Remember me </label>
+          <a href="#">Forgot your password?</a>
+        </div>
+        <div class="input-login-box">
+          <input type="submit" value="Login" />
+        </div>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
