@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Analytics</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Unna:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="main-page">
+    <div class="nav-bar">
+        <h2 class="nav-bar__logo">Finyfi</h2>
+        <div class="nav-bar__nar-links">
+            <a href="dashboard.html">Dashbord</a>
+            <a href="analytics.html">Analytics</a>
+            <a href="#">Sign Out</a>
+        </div>
+    </div>
+
+
+    <div class="flex-layout">
+        <div class="canvas-1">
+            <h4>Spendings of last 30 days</h4>
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="canvas-2">
+            <h4>Top 3 Spendings of last 30 days</h4>
+        <canvas id="myPieChart"></canvas>
+        </div>
+
+
+
+    </div>
+
+    <div class="transaction-container">
+        <div class="transaction-container__navbar">
+            <div class="transaction-container__header">All Transactions</div>
+
+
+            <div class="transaction-container__menu-icons">
+                <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="add-button"
+                >
+                    <path
+                            fill-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z"
+                            clip-rule="evenodd"
+                    />
+                </svg>
+                <div class="sort-wrapper">
+                    <button class="sort-btn">sort by</button>
+                    <div class="sort-dropdown-menu hidden">
+                        <a id="date-btn" href="#">Date</a>
+                        <a id="amt-btn" href="#">Amount</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="transactions-list">
+            <div class="transactions-list__labels">
+                <div class="transactions-list__header">Receiver</div>
+                <div class="transactions-list__header">Category</div>
+                <div class="transactions-list__header">Date</div>
+                <div class="transactions-list__header">Amount</div>
+                <div class="transactions-list__header">Notes</div>
+                <div class="transactions-list__header"></div>
+            </div>
+
+            <div class="transaction-list__all-rows">
+                <!--                  <div class="row" data-t-id = 23>-->
+                <!--                      <div class="transaction-list__data">1eufjsdhfdfsdhfsd</div>-->
+                <!--                      <div class="transaction-list__data">2sdk</div>-->
+                <!--                      <div class="transaction-list__data">ddffwef</div>-->
+                <!--                      <div class="transaction-list__data">efwefwe</div>-->
+                <!--                      <div class="transaction-list__data">eefwefwefwefwefwef5</div>-->
+                <!--                      <div class="transactions-list__row-icons">-->
+
+                <!--                      </div>-->
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="overlay hidden"></div>
+
+    <div class="transaction-form hidden">
+        <form
+                id="form">
+            <!--          method="post"-->
+            <!--          action="/saveTransaction"-->
+
+            <div class="close-button">
+                <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="close-button-icon"
+                >
+                    <path
+                            fill-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z"
+                            clip-rule="evenodd"
+                    />
+                </svg>
+            </div>
+
+            <div class="receiver-and-category">
+                <label for="receiver" class="label">Receiver</label>
+
+                <div class="input-box">
+                    <input
+                            id="receiver"
+                            type="text"
+                            name="receiver"
+                            placeholder="receiver"
+                    />
+                </div>
+
+                <label for="categories" class="label">Category</label>
+                <div class="input-box">
+                    <select id="categories" name="category">
+
+                        <option value="2">Groceries</option>
+                        <option value="3">Rent</option>
+                        <option value="4">Restaurant</option>
+                        <option value="5">Travel</option>
+                        <option value="6">Entertainment</option>
+                        <option value="7">Internet</option>
+                        <option value="8">Taxi</option>
+                        <option value="10">Shopping</option>
+
+
+                    </select>
+                </div>
+            </div>
+            <div class="date-and-amt">
+                <label for="date" class="label">Date</label>
+                <div class="input-box">
+                    <input id="date" type="date" name="date" />
+                </div>
+
+                <label for="amount" class="label">Amount</label>
+                <div class="input-box">
+                    <input id="amount" type="number" name="amount" />
+                </div>
+            </div>
+            <label for="notes" class="label">Notes</label>
+            <div class="input-box">
+                <input id="notes" type="text" name="taskDescription" />
+            </div>
+
+            <input id="post-transaction" type="submit" value="save" />
+
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+ <script src="analytics-script.js"></script>
+</body>
+</html>
